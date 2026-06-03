@@ -200,10 +200,11 @@ func (p *Profile) boot() error {
 	term.Frame(20)
 
 	term.Println("\n\nALERT - System compromised: pwnd by hoWo 1337!\n")
+	term.Frame(20)
 
 	term.CursorToLastRow()
 	term.Print("Press DEL to enter setup, ESC to skip memory test")
-	term.CursorToRow(7)
+	term.CursorToRow(11)
 	term.Frame(20)
 
 	term.Println("Main Processor: GifCPU - 999GHz")
