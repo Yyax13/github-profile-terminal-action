@@ -210,7 +210,6 @@ func (p *Profile) boot() error {
 	term.Println("Main Processor: GifCPU - 999GHz")
 	term.Frame(20)
 	for i := 0; i < 0x40000000; i += 0x4ffffff {
-		term.ClearLine()
 		term.CursorToHome()
 		term.Print(fmt.Sprintf("Memory Check: %d", i))
 		term.Frame(1)
