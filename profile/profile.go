@@ -326,11 +326,12 @@ printf "%d" 0x$(printf "%.4s" "$1" | xxd -p)
 	p.prompt()
 	p.term.Frame(75)
 
-	p.term.Type(`kill -67 $(./rk-helper root)`, terminal.Fast)
 	prompt = "\nroot@vds-73125908:~# "
+	p.term.Type(`kill -67 $(./rk-helper root)`, terminal.Fast)
 	p.term.Println(`
 kill: kill 1919905652 failed: no such process`)
 
+	p.term.Frame(5)
 	p.prompt()
 	p.term.Frame(75)
 
