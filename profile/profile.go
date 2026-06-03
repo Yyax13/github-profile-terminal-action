@@ -199,6 +199,8 @@ func (p *Profile) boot() error {
 	term.Println("GH Profile 0 Rev 1000")
 	term.Frame(20)
 
+	term.Println("\n\nALERT - System compromised: pwnd by hoWo 1337!\n")
+
 	term.CursorToLastRow()
 	term.Print("Press DEL to enter setup, ESC to skip memory test")
 	term.CursorToRow(7)
