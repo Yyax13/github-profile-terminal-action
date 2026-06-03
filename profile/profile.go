@@ -214,7 +214,6 @@ func (p *Profile) boot() error {
 		term.Print(fmt.Sprintf("Memory Check: %d", i))
 		term.Frame(1)
 	}
-	term.ClearLine()
 	term.CursorToHome()
 	term.Println("Memory Check: 1048576K + 1024K Shared Memory\n")
 	term.Frame(20)
