@@ -211,6 +211,7 @@ func (p *Profile) boot() error {
 	term.Frame(20)
 	for i := 0; i < 0x40000000; i += 0x4ffffff {
 		term.CursorToHome()
+		term.CursorToRow(11)
 		term.Print(fmt.Sprintf("Memory Check: %d", i))
 		term.Frame(1)
 	}
