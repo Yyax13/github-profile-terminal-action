@@ -271,7 +271,7 @@ func (p *Profile) showStats(ctx context.Context) error {
 
 	p.term.Frame(75)
 
-	p.term.Type("ls -lAh\n", terminal.Fast)
+	p.term.Type("ls -lAh", terminal.Fast)
 	p.term.Print(`
 Total 2.5M
 -rwxr-wr--   6 howosecurity howosecurity 4.0K Dec 17 13:07 b4ckd0oR.py
@@ -290,8 +290,7 @@ Total 2.5M
 	user := stats.User
 
 	p.term.Type("sudo insmod anakin.ko", terminal.Fast)
-	p.term.Print(`
-[sudo] password for howosecurity: `)
+	p.term.Print("\n[sudo] password for howosecurity: ")
 	p.term.Frame(200)
 
 	p.prompt()
