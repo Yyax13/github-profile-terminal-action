@@ -304,12 +304,12 @@ kill: kill 1751477360 failed: permission denied`)
 	p.term.Type(`sudo dmesg -l debug | tail`, terminal.Fast)
 	p.term.Print(`
                =========== AnakinRK Help Menu ===========
-[ 4715.811268] =	CMD	Signal	Description	=
+[ 4715.811268] =    CMD    Signal    Description    =
 [ 4715.811269] ==========================================
-[ 4715.811269] =	root	67	Get Root	=
-[ 4715.811271] =	hide	67	Toggle hide	=
-[ 4715.811271] =	none	69	Toggle hide port	=
-[ 4715.811272] =	help	67	Help Menu	=
+[ 4715.811269] =    root    67    Get Root    =
+[ 4715.811271] =    hide    67    Toggle hide    =
+[ 4715.811271] =    none    69    Toggle hide port    =
+[ 4715.811272] =    help    67    Help Menu    =
 [ 4715.811273] ==========================================
 
 `)
@@ -327,12 +327,12 @@ printf "%d" 0x$(printf "%.4s" "$1" | xxd -p)
 	p.term.Frame(75)
 
 	p.term.Type(`kill -67 $(./rk-helper root)`, terminal.Fast)
+	prompt = "\nroot@vds-73125908:~# "
 	p.term.Println(`
 kill: kill 1919905652 failed: no such process`)
 
 	p.prompt()
 	p.term.Frame(75)
-	prompt = "\nroot@vds-73125908:~# "
 
 	p.term.Type(`whoami`, terminal.Fast)
 	p.term.Println("\nroot")
