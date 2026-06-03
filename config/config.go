@@ -25,7 +25,7 @@ func Derive() (*Config, error) {
 	var c Config
 	if err := json.Unmarshal([]byte(os.Getenv("GITHUB_CONTEXT")), &c.Context); err != nil {
 		c.Context.Repository = os.Getenv("GITHUB_REPOSITORY")
-		c.Context.Token = os.Getenv("GITHUB_TOKEN")
+		c.Context.Token = os.Getenv("GHPAT")
 	}
 	c.Context.Token = readInput("token", c.Context.Token)
 	c.Theme = readInput("theme", "dark")

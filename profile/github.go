@@ -14,7 +14,7 @@ func newGithubClient(conf *config.Config) *github.Client {
 	var tc *http.Client
 	token := conf.Context.Token
 	if token == "" {
-		token = os.Getenv("GITHUB_TOKEN")
+		token = os.Getenv("GHPAT")
 	}
 	if token != "" {
 		ctx := context.Background()

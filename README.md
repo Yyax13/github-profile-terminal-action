@@ -26,5 +26,5 @@ jobs:
         feed_url: https://www.liam-galvin.co.uk/feed.xml
         twitter_username: liam_galvin
         theme: dark
-        token: ${{ secrets. GITHUB_TOKEN }}
+        token: ${{ secrets. GHPAT }}
 ```
