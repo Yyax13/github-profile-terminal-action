@@ -15,10 +15,10 @@ var darkTheme = Theme{
 		B: 0xc7,
 		A: 0xff,
 	},
-	Background: color.RGBA{ // 22272e
-		R: 0x12,
-		G: 0x17,
-		B: 0x1e,
+	Background: color.RGBA{ // 0d1117
+		R: 0x0d,
+		G: 0x11,
+		B: 0x17,
 		A: 0xff,
 	},
 	Highlight: color.RGBA{
